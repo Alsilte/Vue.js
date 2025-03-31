@@ -187,4 +187,43 @@ Crea un archivo HTML para usar tu componente:
 
 ```
 
+## Importar el Web Component en otro proyecto Vue 3 con API Options
+
+Para usar el web component en un proyecto Vue 3 con Options API, sigue estos pasos:
+
+### 1. Añadir el Web Component al HTML del Proyecto
+
+Incluye tu archivo generado (`mi-web-component.iife.js`) en el archivo HTML principal (`index.html`) de tu proyecto Vue 3:
+
+```html
+<script src="/ruta-a-tu-web-component/mi-web-component.iife.js"></script>
+```
+
+### 2. Registrar el Web Component en el Componente Vue
+
+Si quieres usarlo dentro de un componente Vue con la Options API, asegúrate de registrarlo o permitir que Vue reconozca el elemento personalizado:
+
+```javascript
+export default {
+  name: 'App',
+  mounted() {
+    // Registrar el Web Component como elemento personalizado
+    if (!customElements.get('mi-web-component')) {
+      console.error('El web component no ha sido cargado correctamente.');
+    }
+  },
+};
+```
+
+Luego, úsalo en el template:
+
+```html
+<template>
+  <div>
+    <mi-web-component></mi-web-component>
+  </div>
+</template>
+```
+
+
 
