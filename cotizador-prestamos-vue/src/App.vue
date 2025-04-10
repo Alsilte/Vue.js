@@ -69,7 +69,7 @@ const handleChangeIncremento = () => {
         :operador="'+'"    
         @fn="handleChangeIncremento"  
       />
-
+      
     </div>
     <div class="my-5">
       <input type="range" :min="MIN" :max="MAX" :step="STEP"

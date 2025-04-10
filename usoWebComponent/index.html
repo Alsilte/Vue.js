@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
   <title>Prueba Web Component</title>
+  <style>
+    /* Asegurarse de que la página ocupe toda la pantalla */
+
+
+    /* Contenedor general */
+    .container {
+      display: flex;
+      width: 100dvw;
+      height: 100dvh;
+    }
+
+    /* Estilo del Web Component en el lado izquierdo */
+    .left-panel {
+      width: 80%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-right: 2px solid #ccc;
+      overflow: hidden;
+    }
+
+    c-configurator {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+    /* Estilo para el panel derecho, opcionalmente puedes usarlo para cualquier contenido adicional */
+    .right-panel {
+      width: 20%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Tu Web Component -->
-  <mi-web-component></mi-web-component>
+  <div class="container">
+    <!-- Lado izquierdo: el Web Component -->
+    <c-configurator></c-configurator>
+  </div>
 
   <!-- Dependencias: Vue primero -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 
-  <!-- Web Component generado por Vite -->
-  <script src="./dist/mi-web-component.iife.js"></script>
+  <!-- Tu Web Component -->
+  <script src="./dist/c-configurator.iife.js"></script>
 
 </body>
+
 </html>

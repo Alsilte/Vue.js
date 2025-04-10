@@ -225,5 +225,33 @@ Luego, úsalo en el template:
 </template>
 ```
 
+## Sufijo .ce.vue
+
+ Usar el sufijo .ce.vue en los archivos de componente
+Para que Vue maneje correctamente los estilos en el shadow DOM, necesitas usar el sufijo .ce.vue en los archivos de los componentes que deseas convertir en elementos personalizados.
+
+Ejemplo de un componente Example.ce.vue:
+```javascript
+<template>
+  <div>
+    <h1>Hello from Custom Element!</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Example',
+}
+</script>
+
+<style>
+/* Los estilos serán inyectados en el shadow DOM */
+h1 {
+  color: red;
+}
+</style>
+```
+Importante: Usa el sufijo .ce.vue para asegurarte de que el componente se maneje en modo de elemento personalizado.
+
 
 
